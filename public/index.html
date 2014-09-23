@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<!--
+	Tessellate by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Binfluential</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<section id="header" class="dark">
+				<image src="images/BInfluntialLogoBlanco500.png"></image>
+				<br />
+				<header>
+					<h1>Welcome</h1>
+				</header>
+				<footer>
+					<a href="#fourth" class="button scrolly">Let's go to register for our beta release</a>
+				</footer>
+			</section>
+			
+		<!-- First -->
+			<section id="first" class="main">
+				<header>
+					<div class="container">
+						<h2>Binfluential</h2>
+						<p>Is a web application that let users monetize their
+							digital influence, while giving advertisers a new
+							and more direct channel to reach their audience.</p>
+					</div>
+				</header>
+				<div class="content dark style1 featured">
+					<div class="container">
+						<div class="row">
+							<div class="4u">
+								<section>
+									<span class="feature-icon"><span class="icon fa-clock-o"></span></span>
+									<header>
+										<h3>Fast</h3>
+									</header>
+									<p>Binfluential is fast!</p>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<span class="feature-icon"><span class="icon fa-bolt"></span></span>
+									<header>
+										<h3>Smart</h3>
+									</header>
+									<p>We ensure our influencers is optimal in its publications and fraud and avoid unwanted bots.</p>
+								</section>
+							</div>
+							<div class="4u">
+								<section>
+									<span class="feature-icon"><span class="icon fa-cloud"></span></span>
+									<header>
+										<h3>Cloud</h3>
+									</header>
+									<p>We live in the cloud.</p>
+								</section>
+							</div>
+						</div>
+						<div class="row">
+							<div class="12u">
+								<footer>
+									<a href="#fourth" class="button scrolly">Register</a>
+								</footer>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Fourth -->
+			<section id="fourth" class="main">
+				<header>
+					<div class="container">
+						<h2>Binfluential</h2>
+						<p>You only need to submit your data and we are going to ensure the comming release of our app.</p>
+					</div>
+				</header>
+				<div class="content style4 featured">
+					<div class="container small">
+						<form action="/api/register" method="post" >
+							<div class="row half">
+								<div class="6u"><input type="text" placeholder="Name" name="name" /></div>
+								<div class="6u"><input type="email" placeholder="Email" name="email" /></div>
+							</div>
+							<div class="row half">
+								<div class="12u"><textarea name="comment"placeholder="Comment"></textarea></div>
+							</div>
+							<div class="row">
+								<div class="12u">
+									<ul class="actions">
+										<li><input type="submit" class="button" value="Register" /></li>
+										<li><input type="reset" class="button alt" value="Clear Form" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+			
+		<!-- Footer -->
+			<section id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+				</ul>
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; Binfluential. All rights reserved.</li></li>
+					</ul>
+				</div>
+			</section>
+
+
+		<script>
+		var app = angular.module("user", []);
+
+		app.controller("userRegister", function todos($scope, $http){
+			$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+			$scope.submitItem = function(){
+				console.log($scope.newItem);
+
+				var data = $.param({
+					json: JSON.stringify({
+						formData : formData
+					});
+				});
+
+				$http.post('/api/register', data)
+					.success(function(data){
+						$scope.newItem = {};
+						console.log(data);
+					$scope.showForm = false;
+					})
+					.error(function(data){
+						console.log("Error was " + data);
+						$scope.showForm = false;
+					});
+			};
+		});
+	</script>
+
+	</body>
+</html>

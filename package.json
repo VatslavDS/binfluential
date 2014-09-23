@@ -1,0 +1,24 @@
+{
+  "name": "Binfluential",
+  "version": "0.0.1",
+  "dependencies": {
+    "agenda": "*",
+    "socket.io": "0.9.13"
+ ,
+    "async": "*",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cookie-parser" : "*",
+    "express": "4.0.0",
+    "jwt-simple": "0.2.0",
+    "lodash": "2.4.1",
+    "method-override": "1.0.1",
+    "moment": "*",
+    "mongoose": "3.8.8",
+    "morgan": "~1.2.2",
+    "nodemailer": "0.6.3",
+    "request": "2.34.0",
+    "sugar": "1.4.1",
+    "xml2js": "0.4.2"
+  }
+}
