@@ -18,9 +18,9 @@ module.exports = function(app, User){
 		});
 		currentUser.save(function(err){
 			if(err){
-				res.redirect('index', { status : "Fail" });
+				res.redirect(200,'/');
 			} else {
-				res.redirect('index', { status : "Ok" });
+				res.redirect(200, '/');
 			}
 		});
 	});
